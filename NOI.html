@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav_div ticketDetails">Ticket Details</div>
+    <div class="nav_div enclosures">Enclosures</div>
+    <div class="nav_div register">Register</div>
+    <div class="nav_div fullList">Full List</div>
+  </nav>
+  <button id="Download_Btn">&#8681; Download</button>
+
+  <div id="TicketDetailsContainer" class="navDivsContainer">
+    <button class="addNewTktDetailsBtn">Add</button>
+    <div class="newTicketDetailsContainer"></div>
+    <div class = "TicketDetailsDiv"></div>
+  </div>
+
+  <div id="enclosuresEditDiv" class="navDivsContainer">
+  </div>
+
+  <div id="registrationContainer" class="navDivsContainer">
+    <form id="optionsContainer">
+      <label>Date :</label>
+      <input class="entryInput dateInput" data-key="Date" disabled =true>
+
+      <label>Name :</label>
+      <input class="entryInput" data-key="Name" required>
+
+      <label>Membership/P No. :</label>
+      <input class="entryInput" data-key="Membership" required>
+
+      <label>Contact :</label>
+      <input type='tel' pattern="[0-9]{10}" maxlength="10" class="entryInput" data-key="Contact" required>
+
+      <label>Tickets :</label>
+      <input class="entryInput" data-key="Tickets" required>
+    </form>
+  </div>
+
+  <div id="fullListContainer" class="navDivsContainer">
+  </div>
+    
+  <div id="enclosuresContainer">
+    <div class="topOptions">
+      <button id="BackButton">Back</button>
+      <div class="seatsSelectedDiv"></div>
+      <button id="DoneButton">Done</button>
+    </div>
+    <div id="A-Enclosure" class="enclosures">
+      <div id ='enclosure_tittle'>A-Enclosure</div>
+      <div id="tablesContainer"></div>
+    </div>
+    <div id="B-Enclosure" class="enclosures">
+      <div id ='enclosure_tittle'>B-Enclosure</div>
+      <div id="tablesContainer"></div>
+    </div>
+    <div id="C-Enclosure" class="enclosures">
+      <div id ='enclosure_tittle'>C-Enclosure</div>
+      <div id="tablesContainer"></div>
+    </div>
+    <div id="D-Enclosure" class="enclosures">
+      <div id ='enclosure_tittle'>D-Enclosure</div>
+      <div id="tablesContainer"></div>
+    </div>
+    <div id="E-Enclosure" class="enclosures">
+      <div id ='enclosure_tittle'>E-Enclosure</div>
+      <div id="tablesContainer"></div>
+    </div>
+    <div id="F-Enclosure" class="enclosures">
+      <div id ='enclosure_tittle'>F-Enclosure</div>
+      <div id="tablesContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

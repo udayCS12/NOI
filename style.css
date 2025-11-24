@@ -1,0 +1,339 @@
+:root{
+  --radius: -23px;
+  --enclWidth: calc((100% - 95px)/2);
+  --enclHeight: calc((100% - 110px)/2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button{
+  cursor: pointer;
+}
+
+body{
+  background-color: rgb(42, 76, 103);
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+}
+.nav_div{
+  padding: 5px 12px;
+  border: 1px solid red;
+  cursor: pointer;
+  color: white;
+}
+
+#Download_Btn{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#TicketDetailsContainer{
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid red;
+  width: 600px;
+}
+.addNewTktDetailsBtn{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+}
+.TicketDetailsDiv{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 120px 120px 30px;
+  column-gap: 5px;
+}
+
+#registrationContainer{
+  display: none;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#optionsContainer{
+  display: grid;
+  grid-template-columns: 180px 200px;
+  row-gap: 12px;
+  grid-auto-rows: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#optionsContainer label{
+  color: white;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+}
+
+#optionsContainer input,
+#optionsContainer select{
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  padding-left: 12px;
+  background-color: rgb(173, 168, 168);
+  color: rgb(3, 3, 35);
+}
+
+#registrationContainer button{
+  margin-top: 12px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
+}
+
+.fullListHeadingContainer, .detailsContainer{
+  margin-top: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.detailsContainer{
+  max-height: 80vw;
+  overflow: auto;
+  color: rgb(161, 157, 157);
+}
+.detailsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.fullListHeading{
+  font-weight: bold;
+}
+
+.regDeleteBtn{
+  border: none;
+  background-color: transparent;
+  color: transparent;
+}
+.regDeleteBtn:hover{
+  color: red;
+}
+
+#enclosuresContainer{
+  display: block;
+  width: 100vw;
+  height: 0;
+  overflow: hidden;
+  transition: 0.8s;
+  position: fixed;
+  top:0;
+  background-color: rgb(16, 49, 74);
+  z-index: 1;
+  color: white;
+}
+
+#enclosuresContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.topOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px;
+}
+
+.seatsSelectedDiv {
+  flex: 1;
+  text-align: center;
+}
+
+#BackButton, #DoneButton{
+  border: none;
+  background: transparent;
+  color: white;
+}
+#DoneButton{
+  color: rgb(104, 236, 104);
+  font-weight: 600;
+}
+.enclosures{
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+#A-Enclosure{
+  position: absolute;
+  top:20px;
+  left:10px;
+  background-color: rgb(101, 44, 44);
+  border-radius: 20px;
+  text-align: center;
+  color: rgb(180, 232, 11);
+}
+
+#B-Enclosure{
+  position: absolute;
+  top:20px;
+  background-color: rgb(66, 225, 66);
+  border-radius: 20px;
+  text-align: center;
+  color: rgb(211, 67, 23);
+}
+
+#C-Enclosure{
+  position: absolute;
+  left:10px;
+  background-color: rgb(96, 49, 79);
+  border-radius: 20px;
+  text-align: center;
+  color: rgb(48, 232, 11);
+}
+
+#D-Enclosure{
+  position: absolute;
+  background-color: rgb(60, 119, 131);
+  border-radius: 20px;
+  text-align: center;
+  color: rgba(243, 175, 235, 0.967);
+}
+
+#A-Enclosure, #B-Enclosure,
+#C-Enclosure, #D-Enclosure{
+  width: var(--enclWidth);
+  height: var(--enclHeight);
+}
+
+#B-Enclosure, #D-Enclosure{
+  left: calc(var(--enclWidth) +  20px);
+}
+
+#C-Enclosure, #D-Enclosure{
+  top: calc(var(--enclHeight) + 25px);
+}
+
+#E-Enclosure{
+  position: absolute;
+  bottom: 5px;
+  left:10px;
+  width: 94%;
+  height: 75px;
+  background-color: rgb(70, 49, 107);
+  border-radius: 20px;
+  text-align: center;
+}
+
+#F-Enclosure{
+  position: absolute;
+  top:25px;
+  right:10px;
+  width: 60px;
+  height: calc(100% - 108px);
+  background-color: rgb(85, 78, 78);
+  border-radius: 20px;
+  text-align: center;
+}
+
+#tablesContainer{
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  height: 100%;
+  padding-top: 8px;
+  padding-bottom: 18px;
+  justify-content: center;
+}
+
+#tablesContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.tableContainer{
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 15px;
+}
+
+.table{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  font-size: 12px;
+  /*color: rgba(159, 191, 17, 0.834);*/
+  cursor: default;
+}
+.chair{
+  height: 8px;
+  width: 8px;
+  border: 1px solid rgb(24, 23, 23);
+ /* border-radius: 50%;*/
+ border-radius: 3px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform-origin: 0px 0px;
+  color: white;
+  cursor: pointer;
+}
+
+.chair_1{
+  transform: rotate(-60deg) translateY(var(--radius));
+}
+
+.chair_2{
+  transform: rotate(0deg) translateY(var(--radius));
+  
+}
+
+.chair_3{
+  transform: rotate(60deg) translateY(var(--radius));
+}
+
+.chair_4{
+  transform: rotate(120deg) translateY(var(--radius));
+}
+
+.chair_5{
+  transform: rotate(180deg) translateY(var(--radius));
+}
+
+.chair_6{
+  transform: rotate(240deg) translateY(var(--radius));
+}
+
+.bookedChair {
+  background-color: rgb(29, 29, 29);
+  border: none;
+}
+
+.selectedChair {
+  background-color: yellow;
+}
